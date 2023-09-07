@@ -45,7 +45,7 @@ const Inicio = () => {
                                         </Link>
                                         <Link to={"/ACO"}>
                                             <div>
-                                                <img className="h-96 w-full rounded-lg object-cover" src="https://imagenes.elpais.com/resizer/bQRGxWPWzc1K_T67CSJhByjss_E=/1960x1103/filters:focal(1098x759:1108x769)/cloudfront-eu-central-1.images.arcpublishing.com/prisa/DFA77P2KCBCMDM5AJ3ETUTLLAE.jpg" />
+                                                <img className="h-96 w-full rounded-lg object-cover" src="https://www.nationalgeographic.com.es/medio/2020/11/13/hormiguero_9e8f8bb4.jpg" />
                                                 <h2 className="mt-4 text-2xl font-semibold capitalize text-gray-800 dark:text-white">Optimización de colonia de hormigas (ACO)</h2>
                                             </div>
                                         </Link>

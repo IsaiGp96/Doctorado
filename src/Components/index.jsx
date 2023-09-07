@@ -1,6 +1,5 @@
 import React from "react";
 import Boton from "./elements/boton";
-import Inicio from "./inicio";
 import { Link } from "react-router-dom";
 
 const Index = () => {
