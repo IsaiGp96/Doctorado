@@ -6,9 +6,6 @@ import PSO from './Components/pso';
 import BA from './Components/ba';
 import ACO from './Components/aco';
 import Compare from './Components/compare';
-import PsoMain from './Components/psomain';
-import MooraPso from './Components/MooraPso';
-import DaPso from './Components/DaPso';
 
 
 import About from './Components/about';
