@@ -1,8 +1,18 @@
 import { useState } from "react";
 import React from "react";
 import { postData } from "./api";
+import * as XLSX from 'xlsx';
+
 
 const PsoMain = () => {
+    const downloadXLSX = () => {
+        const ws = XLSX.utils.json_to_sheet([results]); // Convertimos los resultados a una hoja de Excel
+        const wb = XLSX.utils.book_new(); // Creamos un nuevo libro de Excel
+        XLSX.utils.book_append_sheet(wb, ws, "Resultados"); // Agregamos la hoja al libro
+        XLSX.writeFile(wb, "resultados.xlsx"); // Guardamos el libro como un archivo .xlsx
+    };
+
+
     const [params, setParams] = useState({
         w: '',
         c1: '',
@@ -23,7 +33,7 @@ const PsoMain = () => {
     });
 
     const [results, setResults] = useState({});
- console.log("Valor de w:", params.w)
+    console.log("Valor de w:", params.w)
     const handleSubmit = async (e) => {
         e.preventDefault();
 
@@ -37,18 +47,18 @@ const PsoMain = () => {
         }
     }
 
-const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setParams(prevState => ({
-        ...prevState,
-        [name]: value
-    }));
+    const handleInputChange = (e) => {
+        const { name, value } = e.target;
+        setParams(prevState => ({
+            ...prevState,
+            [name]: value
+        }));
 
-    console.log(name, value);
-};
+        console.log(name, value);
+    };
 
     return (
-        <div className="flex justify-center items-center">
+        <div className="flex justify-center">
             <section className="mt-10">
                 <div >
                     <div className="max-w-2xl mx-auto bg-white p-8">
@@ -85,7 +95,7 @@ const handleInputChange = (e) => {
                                 <input type="number" placeholder="Ri= (t^-i)/(t^+i+t^-i), i=1,...,m" disabled className="text-center bg-slate-300 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-black dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" required />
                             </div>
                             <button type="submit" className="text-black bg-slate-300 mt-5 hover:bg-blue focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Calcular</button>
-                            
+
                         </form>
                     </div>
                 </div>
@@ -142,8 +152,13 @@ const handleInputChange = (e) => {
                     </div>
 
                 </div>
+                <div className="items-center">
+                    <button onClick={downloadXLSX} className="text-black bg-slate-300 mt-5 hover:bg-blue focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Descargar XLSX</button>
+                </div>
             </section>
+
         </div>
+
     );
 }
 export default PsoMain;

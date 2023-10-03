@@ -1,6 +1,8 @@
 import axios from "axios";
 
-const BASE_URL = 'http://127.0.0.1:5000/psomain';
+//const BASE_URL = 'http://127.0.0.1:5000/psomain';
+const BASE_URL = '/AlgorithmsApp/templates/psomain';
+
 
 export const postData = async (params) => {
     // Convertir los parámetros a formato x-www-form-urlencoded

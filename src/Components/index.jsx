@@ -32,6 +32,11 @@ const Index = () => {
                                 <Link to="/">
                                     <a className="transform text-gray-700 transition-colors duration-300 hover:text-blue-500 dark:text-gray-200 dark:hover:text-blue-400 lg:mx-8" href="#">Inicio</a>
                                 </Link>
+
+                                <Link to="/MCDM">
+                                    <a className="transform text-gray-700 transition-colors duration-300 hover:text-blue-500 dark:text-gray-200 dark:hover:text-blue-400 lg:mx-8" href="#">MCDM</a>
+                                </Link>
+
                                 <Link to="/PSO">
                                     <a className="transform text-gray-700 transition-colors duration-300 hover:text-blue-500 dark:text-gray-200 dark:hover:text-blue-400 lg:mx-8" href="#">PSO</a>
                                 </Link>

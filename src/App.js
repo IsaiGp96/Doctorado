@@ -6,7 +6,7 @@ import PSO from './Components/pso';
 import BA from './Components/ba';
 import ACO from './Components/aco';
 import Compare from './Components/compare';
-
+import MCDM from './Components/mcdm';
 
 import About from './Components/about';
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
@@ -23,7 +23,9 @@ function App() {
           <Route path = "/PSO" element = {<PSO />} />
           <Route path = "/BA" element = {<BA />} />
           <Route path = "/ACO" element = {<ACO/>}/>
-          <Route path = '/Compare' component = {<Compare />} />
+          <Route path = '/Compare' element = {<Compare />} />
+          <Route path = '/MCDM' element = {<MCDM />} />
+
         </Routes>
       </div>
     </Router>
